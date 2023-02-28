@@ -6,8 +6,10 @@ import (
 	"github.com/divrhino/divrhino-trivia/models"
 )
 
-func Home(c *fiber.Ctx) error {
-	return c.SendString("Trivia App")
+func ListFacts(c *fiber.Ctx) error {
+	facts := []models.Fact{}
+	database.DB.Db.Find(&facts)
+	return c.Status(200).JSON(facts)
 }
 
 func CreateFact(c *fiber.Ctx) error {
