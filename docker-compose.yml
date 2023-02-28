@@ -11,7 +11,7 @@ services:
       - .:/app
     command: air ./cmd/main.go -b 0.0.0.0 
   db:
-    image: postgres:apline
+    image: postgres:alpine
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
