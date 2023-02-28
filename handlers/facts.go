@@ -12,6 +12,11 @@ func ListFacts(c *fiber.Ctx) error {
 	return c.Status(200).JSON(facts)
 }
 
+
+func Home(c *fiber.Ctx) error {
+	return c.SendString("Welcome to the API")
+}
+
 func DeleteFact(c *fiber.Ctx) error {
 	id := c.Params("id")
 	fact := models.Fact{}

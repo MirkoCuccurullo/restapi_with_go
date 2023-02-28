@@ -37,6 +37,7 @@ func ConnectDb() {
 
 	log.Println("Migrating database")
 	db.AutoMigrate(&models.Fact{})
+	db.AutoMigrate(&models.Caps{})
 
 	DB = Dbinstance{Db: db}
 
